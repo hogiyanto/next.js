@@ -1,0 +1,56 @@
+{
+    "env": {
+      "browser": true,
+      "es6": true
+    },
+    "extends": [
+      "eslint:recommended", // From ESLint itself
+      "plugin:@typescript-eslint/recommended", // From @typescript-eslint/eslint-plugin
+      "plugin:react/recommended", // From eslint-plugin-react
+      "plugin:react-hooks/recommended", // From eslint-plugin-react-hooks
+      "plugin:import/typescript", // From eslint-plugin-import
+      "plugin:prettier/recommended", // From eslint-plugin-prettier
+      "prettier", // From eslint-config-prettier, must be at this bottom (last) so it gets chance to override other configs and then followed by other exclusion. See https://github.com/prettier/eslint-config-prettier
+      "prettier/@typescript-eslint", // From eslint-config-prettier, to exclude @typescript-eslint/eslint-plugin
+      "prettier/react" // From eslint-config-prettier, to exclude eslint-plugin-react
+    ],
+    "globals": {
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly"
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 2018,
+      "sourceType": "module"
+    },
+    "plugins": [
+      "@typescript-eslint", // From @typescript-eslint/eslint-plugin
+      "react", // From eslint-plugin-react
+      "react-hooks", // From eslint-plugin-react-hooks
+      "import", // From eslint-plugin-import
+      "prettier" // From eslint-plugin-prettier
+    ],
+    "settings": {
+      "react": {
+        "version": "detect" // Tells eslint-plugin-react to automatically detect the version of React to use
+      }
+    },
+    "rules": {
+      "@typescript-eslint/explicit-function-return-type": "off", // Type inference is TypeScript feature!!
+      "@typescript-eslint/explicit-module-boundary-types": "off", // The IDE can give us hint what the return value is
+      "@typescript-eslint/no-explicit-any": "off", // Sometimes we need any, if it's explicit, that means we know what we are doing
+      "@typescript-eslint/camelcase": "off",
+      "@typescript-eslint/no-use-before-define": "off",
+      "react/display-name": "off", // Only for debugging purpose
+      "react/prop-types": "off", // TypeScript already takes care of this
+      "react/react-in-jsx-scope": "off",
+      "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+      "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
+      "import/order": ["error", { "newlines-between": "always" }], // Sort import rule with auto-fixer!!
+      "prettier/prettier": "error" // Report prettier error as ESLint error
+    }
+  }
+  

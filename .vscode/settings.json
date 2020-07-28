@@ -1,0 +1,13 @@
+{
+  "editor.insertSpaces": true,
+  "editor.formatOnSave": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "eslint.options": {
+    "configFile": ".eslintrc.json"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
