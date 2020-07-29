@@ -4,14 +4,12 @@ import { GetStaticPaths, GetStaticProps } from "next";
 
 import Layout from "../../components/layout";
 import { getAllPostIds, getPostData } from "../../lib/posts";
+import Title from "../../components/title";
 
 const Post = ({ postData }: any) => {
   return (
     <Layout>
-      <Head>
-        <title>{postData.title}</title>
-        <link rel="icon" href="/favicon/favicon.ico" />
-      </Head>
+      <Title title={postData.id} />
 
       {postData.title}
       <br />

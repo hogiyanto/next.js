@@ -1,17 +1,12 @@
 import Link from "next/link";
-import Head from "next/head";
 import { GetStaticProps } from "next";
 
 import { getSortedPostsData } from "../lib/posts";
+import Layout from "../components/layout";
 
 const HomePage = ({ allPostsData }: any) => {
   return (
-    <div>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon/favicon.ico" />
-      </Head>
-
+    <Layout>
       <section>
         <h2>Blog</h2>
         <ul>
@@ -28,7 +23,7 @@ const HomePage = ({ allPostsData }: any) => {
           ))}
         </ul>
       </section>
-    </div>
+    </Layout>
   );
 };
 
