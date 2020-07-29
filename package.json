@@ -34,6 +34,7 @@
   },
   "homepage": "https://github.com/hogiyanto/next.js#readme",
   "dependencies": {
+    "gray-matter": "4.0.2",
     "next": "9.5.0",
     "react": "16.13.1",
     "react-dom": "16.13.1"
