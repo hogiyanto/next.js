@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Head from "next/head";
 import { GetStaticProps } from "next";
 
@@ -16,7 +17,9 @@ const HomePage = ({ allPostsData }: any) => {
         <ul>
           {allPostsData.map(({ id, date, title }: any) => (
             <li key={id}>
-              {title}
+              <Link href={`/posts/${id}`}>
+                <a>{title}</a>
+              </Link>
               <br />
               {id}
               <br />
