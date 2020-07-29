@@ -1,21 +1,23 @@
 import Link from "next/link";
-import Head from "next/head";
 import { GetStaticPaths, GetStaticProps } from "next";
 
 import Layout from "../../components/layout";
 import { getAllPostIds, getPostData } from "../../lib/posts";
 import Title from "../../components/title";
+import Date from "../../components/date";
 
 const Post = ({ postData }: any) => {
   return (
     <Layout>
-      <Title title={postData.id} />
+      <Title title={postData.title} />
 
       {postData.title}
       <br />
       {postData.id}
       <br />
-      {postData.date}
+      <Date dateString={postData.date} />
+      <br />
+      <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       <div>
         <Link href="/">
           <a>← Back to home</a>
@@ -34,7 +36,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const postData = getPostData(params?.id);
+  const postData = await getPostData(params?.id);
   return {
     props: {
       postData,
