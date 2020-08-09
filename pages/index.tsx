@@ -18,14 +18,12 @@ const mainFeaturedPost = {
 const HomePage = ({ allPostsData }: any) => {
   return (
     <Layout>
-      <main>
-        <MainFeaturedPost post={mainFeaturedPost} />
-        <Grid container spacing={4}>
-          {allPostsData.map((post: Post) => (
-            <FeaturedPost key={post.title} post={post} />
-          ))}
-        </Grid>
-      </main>
+      <MainFeaturedPost post={mainFeaturedPost} />
+      <Grid container spacing={4}>
+        {allPostsData.map((post: Post) => (
+          <FeaturedPost key={post.title} post={post} />
+        ))}
+      </Grid>
     </Layout>
   );
 };
