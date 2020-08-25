@@ -30,7 +30,7 @@ exports[`Home page matches snapshot 1`] = `
         </code>
       </p>
       <button
-        class="jsx-2250570153"
+        class="jsx-2250570153 btn-blue"
       >
         Test Button
       </button>

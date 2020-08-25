@@ -17,6 +17,7 @@ export const Home = (): JSX.Element => (
       </p>
 
       <button
+        className="btn-blue"
         onClick={() => {
           window.alert('With typescript and Jest')
         }}
