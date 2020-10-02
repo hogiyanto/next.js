@@ -4,6 +4,7 @@ import { render, screen } from "../testUtils";
 import { Home } from "../../pages/index";
 
 describe("Home page", () => {
+  // eslint-disable-next-line jest/no-commented-out-tests
   // it("matches snapshot", () => {
   //   const { asFragment } = render(<Home />, {});
   //   expect(asFragment()).toMatchSnapshot();
