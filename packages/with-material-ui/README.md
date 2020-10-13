@@ -1,4 +1,4 @@
-# NextJS Typescript ESLint Prettier Material-UI Boilerplate
+# NextJS Typescript ESLint Prettier Material-UI Apollo-Client Boilerplate
 
 Install it and run:
 

@@ -4,6 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import MenuIcon from "@material-ui/icons/Menu";
 
 import Footer from "./footer";
+import Link from "./link";
 
 const drawerWidth = 240;
 
@@ -61,11 +62,25 @@ const Layout: React.FC = ({ children }) => {
       <div className={classes.toolbar} />
       <Divider />
       <List>
+        <Link href="/">
+          <ListItem button>
+            <ListItemText>Home</ListItemText>
+          </ListItem>
+        </Link>
+        <Link href="/posts/ssg-ssr">
+          <ListItem button>
+            <ListItemText>SSG vs SSR</ListItemText>
+          </ListItem>
+        </Link>
+        <Link href="/posts/pre-rendering">
+          <ListItem button>
+            <ListItemText>Pre-Rendering</ListItemText>
+          </ListItem>
+        </Link>
         <ListItem button>
-          <ListItemText>SSG vs SSR</ListItemText>
-        </ListItem>
-        <ListItem button>
-          <ListItemText>Pre-Rendering</ListItemText>
+          <ListItemText>
+            <Link href="/countries">Countries</Link>
+          </ListItemText>
         </ListItem>
       </List>
     </div>
