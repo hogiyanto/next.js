@@ -12,6 +12,8 @@
     "format": "prettier --write \"**/*.{js,ts,tsx}\"",
     "lint": "eslint . --ext .js,.ts,.tsx",
     "lint-fix": "eslint --fix . --ext .js,.ts,.tsx",
+    "schema": "apollo service:download ./src/__generated__/schema.json --endpoint=https://countries.trevorblades.com",
+    "types": "apollo client:codegen ./src/__generated__/types.ts --addTypename --includes=./graphql/**/**.graphql.ts --localSchemaFile=./src/__generated__/schema.json --target=typescript --outputFlat",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "husky": {
@@ -34,9 +36,11 @@
   },
   "homepage": "https://github.com/hogiyanto/next.js#readme",
   "dependencies": {
+    "@apollo/client": "3.2.1",
     "@material-ui/core": "4.11.0",
     "@material-ui/icons": "4.9.1",
     "date-fns": "2.15.0",
+    "graphql": "15.3.0",
     "gray-matter": "4.0.2",
     "next": "9.5.0",
     "react": "16.13.1",
@@ -49,6 +53,7 @@
     "@types/react": "16.9.43",
     "@typescript-eslint/eslint-plugin": "3.7.1",
     "@typescript-eslint/parser": "3.7.1",
+    "apollo": "2.31.0",
     "eslint": "7.5.0",
     "eslint-config-prettier": "6.11.0",
     "eslint-plugin-import": "2.22.0",
